@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import PersonCard from './PersonCard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={styles.app}>
+      <h1>Person Cards</h1>
+      <PersonCard firstName="John" lastName="Doe" age={28} hairColor="Brown" />
+      <PersonCard firstName="Jane" lastName="Smith" age={34} hairColor="Blonde" />
+      <PersonCard firstName="Alice" lastName="Johnson" age={45} hairColor="Black" />
+      <PersonCard firstName="Bob" lastName="Brown" age={23} hairColor="Red" />
     </div>
   );
 }
+
+const styles = {
+  app: {
+    textAlign: 'center'
+  }
+};
 
 export default App;
