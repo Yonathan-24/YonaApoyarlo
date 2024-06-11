@@ -1,24 +1,21 @@
-// src/PersonCard.js
-import React from 'react';
+import React, { useState } from 'react';
 
-const PersonCard = ({ firstName, lastName, age, hairColor }) => {
+const PersonCard = (props) => {
+    const { firstName, lastName, initialAge, hairColor } = props;
+    const [age, setAge] = useState(initialAge);
+
+    const handleBirthday = () => {
+        setAge(age + 1);
+    };
+
     return (
-        <div style={styles.card}>
-            <h2>{firstName} {lastName}</h2>
+        <div>
+            <h2>{lastName}, {firstName}</h2>
             <p>Age: {age}</p>
             <p>Hair Color: {hairColor}</p>
+            <button onClick={handleBirthday}>Birthday Button for {firstName} {lastName}</button>
         </div>
     );
-};
-
-const styles = {
-    card: {
-        border: '1px solid #ccc',
-        padding: '10px',
-        margin: '10px',
-        borderRadius: '5px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    }
 };
 
 export default PersonCard;

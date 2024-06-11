@@ -1,23 +1,16 @@
-// src/App.js
 import React from 'react';
+import './App.css';
 import PersonCard from './PersonCard';
 
 function App() {
   return (
-    <div className="App" style={styles.app}>
-      <h1>Person Cards</h1>
-      <PersonCard firstName="John" lastName="Doe" age={28} hairColor="Brown" />
-      <PersonCard firstName="Jane" lastName="Smith" age={34} hairColor="Blonde" />
-      <PersonCard firstName="Alice" lastName="Johnson" age={45} hairColor="Black" />
-      <PersonCard firstName="Bob" lastName="Brown" age={23} hairColor="Red" />
+    <div className="App">
+      <PersonCard firstName="John" lastName="Doe" initialAge={25} hairColor="Black" />
+      <PersonCard firstName="Jane" lastName="Smith" initialAge={30} hairColor="Brown" />
+      <PersonCard firstName="Alice" lastName="Johnson" initialAge={35} hairColor="Blonde" />
+      <PersonCard firstName="Bob" lastName="Brown" initialAge={40} hairColor="Red" />
     </div>
   );
 }
-
-const styles = {
-  app: {
-    textAlign: 'center'
-  }
-};
 
 export default App;
